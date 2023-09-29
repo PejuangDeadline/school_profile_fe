@@ -1,4 +1,34 @@
-﻿.search-box {
+﻿* {
+    scrollbar-width: thin;
+    /* scrollbar-color: #151a48 rgb(255, 255, 255); */
+    scrollbar-color: #3dd28b rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar-thumb {
+    /* background-color: #151a48; */
+    background-color: #171c4abf;
+    border-radius: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    visibility: hidden;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.bgmtrx {
+    background: -webkit-linear-gradient(169deg, #171c4a 17%, #565d9a 100%);
+}
+
+.search-box {
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -18,7 +48,7 @@
 
 /* This will apply when the input field is focused */
 .search-box input[type="text"]:focus {
-    border: 2px solid #4a90e2; /* change the color as you like */
+    border: 2px solid #3dd28b;
 }
 
 .search-box .search-icon {
@@ -52,6 +82,40 @@
     --bg-homepage-1-url: url('{{ asset('assets/img/homepage/bg1.png') }}');
 } */
 
+.bg-branch {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-branch img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding-right: 1.25rem !important;
+    padding-left: 1.25rem !important;
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+
+@media (min-width: 1024px) {
+    .text-overlay {
+        padding-right: 2.5rem !important;
+        padding-left: 2.5rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    h4.title-branch {
+        font-size: 1.75rem;
+    }
+}
+
 .bg-homepage-1 {
     position: relative;
     background: url("/assets/img/homepage/bg1.png") no-repeat center center;
@@ -80,7 +144,6 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 25%;
     background: linear-gradient(
         to top,
         rgba(255, 255, 255, 0),
@@ -102,6 +165,14 @@
         rgba(255, 255, 255, 1)
     );
     pointer-events: none; /* This ensures that the pseudo-element doesn't interfere with any interactions on the element */
+}
+
+.bg-footer {
+    position: relative;
+    background: url("/assets/img/footer/bg-4.png") no-repeat center center;
+    background-size: cover;
+    /* padding-bottom: 8rem; */
+    overflow: hidden;
 }
 
 .img-container {
@@ -135,4 +206,301 @@
     -webkit-line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+}
+.justify-title-kegiatan {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.custom-list {
+    list-style-type: none;
+}
+
+.icon-wrapper::before {
+    content: "\f061";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.content-wrapper {
+    width: 100%;
+}
+.d-flex {
+    display: flex;
+}
+
+.bordered-text {
+    -webkit-text-stroke: 2px rgb(255, 255, 255); /* width and color of the stroke */
+}
+.center-pagination {
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-gradient-top {
+    background: linear-gradient(160deg, #ffb7b7 9%, #727272 100%),
+        radial-gradient(100% 100% at 30% 10%, #ffd1d1 0, #260000 100%),
+        linear-gradient(180deg, #fce596 0, #fff 100%),
+        radial-gradient(100% 100% at 70% 0, red 0, #fce596 100%),
+        linear-gradient(280deg, #3dd28b 0, #fce596 100%);
+    background-blend-mode: screen, overlay, color-burn, color-dodge, normal;
+}
+
+.imag-homepage {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/2.3;
+    border-radius: 10px;
+}
+
+.imag {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+}
+.imag-fotos {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/4;
+    border-radius: 10px;
+}
+
+.judulhighlight {
+    height: 7rem;
+}
+
+.btnsrch {
+    width: 50%;
+    height: 100%;
+    background-color: #45c4a0;
+    color: rgb(255, 255, 255);
+    padding: 7px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.btnsrch:hover {
+    background-color: #3b9d82;
+}
+
+.srch {
+    color: rgb(255, 255, 255);
+}
+.srch:hover {
+    color: rgb(230, 230, 230);
+}
+
+.my-centered-pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textjudulbread {
+    width: 150px; /* Adjust the width as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textbread {
+    display: inline-block;
+}
+.iconbread {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .textbread {
+        display: none;
+    }
+    .iconbread {
+        display: inline-block;
+    }
+}
+
+/* custom row */
+/* Basic styling */
+.custom-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.custom-col {
+    flex: 0 0 100%; /* Default to full width for mobile and smaller screens */
+    max-width: 100%;
+}
+.custom-col-artikel {
+    flex: 0 0 100%; /* Default to full width for mobile and smaller screens */
+    max-width: 100%;
+}
+/* Landscape: 25% width */
+@media (orientation: landscape) {
+    .custom-col {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .custom-col-artikel {
+        flex: 0 0 33.33333%; /* Default to full width for mobile and smaller screens */
+        max-width: 33.33333%;
+    }
+}
+/* Portrait: 50% width for medium-sized screens */
+@media (min-width: 375px) and (orientation: portrait) {
+    .custom-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .custom-col-artikel {
+        flex: 0 0 50%; /* Default to full width for mobile and smaller screens */
+        max-width: 50%;
+    }
+}
+
+/* WhatsApp Button CSS */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #25d366;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+
+    /* Center the icon in the middle of the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.whatsapp-icon i {
+    color: white;
+    font-size: 24px;
+}
+
+/* Social Media Popup Trigger Button CSS */
+.social-trigger {
+    position: fixed;
+    bottom: 4.5rem; /* Adjust based on the height of your WhatsApp icon + some margin */
+    right: 1.5rem;
+    background-color: #ffc997; /* Color for the button, change as needed */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+
+    /* Center the icon in the middle of the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+/* Social Media Popup CSS */
+.social-popup {
+    position: fixed;
+    bottom: 7.5rem; /* Positioned above the trigger button, adjust as needed */
+    right: 1.5rem;
+    display: none; /* Initially hidden */
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+
+    /* Layout for the social media icons inside */
+    display: flex;
+    justify-content: space-around;
+}
+.social-trigger:hover {
+    cursor: pointer;
+    color: #e3eaef;
+}
+
+.social-popup a {
+    margin: 0 5px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.social-popup i {
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+.card-ttl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Default size and hover effect */
+.responsive-text {
+    font-size: 16px;
+    transition: border 0.3s ease, font-size 0.3s ease;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.4rem;
+    width: 100%; /* Full width of parent */
+    text-align: center;
+}
+
+.responsive-text:hover {
+    border: 1px solid #25d366;
+}
+
+/* Adjust font size and hover effect for medium screens */
+@media only screen and (max-width: 768px) {
+    .responsive-text {
+        font-size: 11px;
+    }
+}
+
+/* Adjust font size and hover effect for smaller screens */
+@media only screen and (max-width: 576px) {
+    .responsive-text {
+        font-size: 9px;
+    }
+}
+
+/* Keyframe animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Control the expansion amount */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to only the #ppdpbutton */
+#ppdpbutton {
+    animation: pulse 2s infinite;
+}
+.textsrch {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.search-result-box .search-item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e3eaef;
+    margin-bottom: 20px;
 }
