@@ -144,12 +144,13 @@
     top: 0;
     left: 0;
     right: 0;
+    height: 25%;
     background: linear-gradient(
         to top,
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 1)
     );
-    pointer-events: none; /* This ensures that the pseudo-element doesn't interfere with any interactions on the element */
+    pointer-events: none;
 }
 
 .bg-homepage-1::before {

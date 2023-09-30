@@ -42,7 +42,13 @@
                       <div class="row gx-0">
                         <div class="col-lg-5 align-self-stretch">
                           <div class="map map-full rounded-top rounded-lg-start">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.48743205145!2d106.89529807373991!3d-6.199241660727816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4b986aa9d99%3A0x81e1a8753bc418cc!2sYayasan%20Kharisma!5e0!3m2!1sen!2sid!4v1695469799552!5m2!1sen!2sid" style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
+                            @php
+                                $widthReplaced = preg_replace('/width="\d+"/', 'width="100%"', $branch->gmaps_link);
+                                $bothReplaced = preg_replace('/height="\d+"/', 'height="100%"', $widthReplaced);
+                            @endphp
+
+                            {!! $bothReplaced !!}
+                            {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.48743205145!2d106.89529807373991!3d-6.199241660727816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4b986aa9d99%3A0x81e1a8753bc418cc!2sYayasan%20Kharisma!5e0!3m2!1sen!2sid!4v1695469799552!5m2!1sen!2sid" style="width:100%; height: 100%; border:0" allowfullscreen></iframe> --}}
                           </div>
                         </div>
                         <div class="col-lg-6">
