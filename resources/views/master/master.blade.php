@@ -21,6 +21,13 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<style>
+  :root {
+      --bg-homepage-1-url: url("{{ asset('assets/img/homepage/bg1.png') }}");
+      --bg-homepage-2-url: url("{{ asset('assets/img/homepage/bg2.png') }}");
+      --bg-homepage-3-url: url("{{ asset('assets/img/homepage/bg3.png') }}");
+  }
+</style>
 
 <?php
 use Illuminate\Support\Str;
