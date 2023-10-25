@@ -41,11 +41,11 @@ use Illuminate\Support\Str;
           <div class="navbar-brand w-100">
             <a href="{{ route('homepage') }}">
               @if(empty($logobranchchange))
-                <img class="logo-dark" src="{{ asset('assets/img/logoicon.svg') }}" alt="">
-                <img class="logo-light" src="{{ asset('assets/img/logoicon.svg') }}" alt="">
+                <img class="logo-dark logo-navbars" src="{{ asset('assets/img/logoicon.svg') }}" alt="">
+                <img class="logo-light logo-navbars" src="{{ asset('assets/img/logoicon.svg') }}" alt="">
               @else
-                <img class="logo-dark" src="{{ $urladmin.$branch->logo }}" alt="">
-                <img class="logo-light" src="{{ $urladmin.$branch->logo }}" alt="">
+                <img class="logo-dark logo-navbars" src="{{ $urladmin.$branch->logo }}" alt="">
+                <img class="logo-light logo-navbars" src="{{ $urladmin.$branch->logo }}" alt="">
               @endif
             </a>
           </div>
@@ -53,9 +53,9 @@ use Illuminate\Support\Str;
             <div class="offcanvas-header d-lg-none">
               <h3 class="text-white fs-30 mb-0">
                 @if(empty($logobranchchange))
-                  <img src="{{ asset('assets/img/logoicon.svg') }}" alt="">
+                  <img class="icon-sidebar" src="{{ asset('assets/img/logoicon.svg') }}" alt="">
                 @else
-                  <img src="{{ $urladmin.$branch->logo }}" alt="">
+                  <img class="icon-sidebar" src="{{ $urladmin.$branch->logo }}" alt="">
                 @endif
                 
               </h3>
