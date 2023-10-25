@@ -508,3 +508,25 @@
     border-bottom: 1px solid #e3eaef;
     margin-bottom: 20px;
 }
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.navbar-brand a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+img.logo-navbars {
+    max-height: 100%;
+    width: auto;
+}
+
+.icon-sidebar {
+    max-width: 20vw;
+}
