@@ -146,7 +146,7 @@
           <div class="row gx-0">
             <div class="col-lg-5 align-self-stretch">
               <div class="map map-full rounded-top rounded-lg-start">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.48743205145!2d106.89529807373991!3d-6.199241660727816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4b986aa9d99%3A0x81e1a8753bc418cc!2sYayasan%20Kharisma!5e0!3m2!1sen!2sid!4v1695469799552!5m2!1sen!2sid" style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.8883964388774!2d112.62903037358251!3d-7.906726478684316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd62a11df63ff41%3A0xb69acf920999f691!2sSD%20ISLAM%20KHARISMA!5e0!3m2!1sid!2sid!4v1699932820730!5m2!1sid!2sid" style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
               </div>
             </div>
 
@@ -174,7 +174,7 @@
                     @endif
                   </div>
                 </div>
-                <div class="d-flex flex-row mt-2">
+                {{-- <div class="d-flex flex-row mt-2">
                   <div>
                     <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-instagram"></i> </div>
                   </div>
@@ -205,7 +205,7 @@
                       <p class="m-0"> - </p>
                     @endif
                   </div>
-                </div>
+                </div> --}}
                 <p class="mt-4"><b>Jam Buka:</b></p>
                 <ul class="mt-n4">
                   <li>{{ $institution->open_at }} @if($institution->closed_at != null) - {{ $institution->closed_at }}@endif</li>
