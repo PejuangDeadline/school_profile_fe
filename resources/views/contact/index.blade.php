@@ -51,6 +51,7 @@
                             {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.48743205145!2d106.89529807373991!3d-6.199241660727816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4b986aa9d99%3A0x81e1a8753bc418cc!2sYayasan%20Kharisma!5e0!3m2!1sen!2sid!4v1695469799552!5m2!1sen!2sid" style="width:100%; height: 100%; border:0" allowfullscreen></iframe> --}}
                           </div>
                         </div>
+                        
                         <div class="col-lg-6">
                           <div class="p-6">
                             <div class="d-flex flex-row">
@@ -62,11 +63,23 @@
                                 <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
                               </div>
                               <div>
-                                <h5 class="mb-1">Phone</h5>
-                                <p>{{ $branch->phone1 }} / {{ $branch->phone2 }}</p>
+                                <h5 class="mb-n1">Phone</h5>
+                                <p class="m-0">
+                                  @if($branch->phone1 != null && $branch->phone2 != null)
+                                    {{ $branch->phone1 }} / {{ $branch->phone2 }}
+                                  @elseif($branch->phone1 != null)
+                                    {{ $branch->phone1 }}
+                                  @elseif($branch->phone2 != null)
+                                    {{ $branch->phone2 }}
+                                  @endif
+                                </p>
+                                
+                                @if($branch->whatsapp != null)
+                                  <p class="m-0">{{ $branch->whatsapp }}(whatsapp)</p>
+                                @endif
                               </div>
                             </div>
-                            <div class="d-flex flex-row">
+                            <div class="d-flex flex-row mt-2">
                               <div>
                                 <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-instagram"></i> </div>
                               </div>
@@ -77,25 +90,34 @@
             
                                   $usernameig = str_replace($find, $replaceWith, $branch->instagram);
                                 ?>
-                                <h5 class="mb-1">Instagram</h5>
-                                <p class="mb-0"><a href="{{ $branch->instagram }}" class="link-body">{{ $usernameig }}</a></p>
+                                <h5 class="mb-n1">Instagram</h5>
+                                @if($branch->instagram != null)
+                                  <p class="m-0"><a href="{{ $branch->instagram }}" class="link-body">{{ $usernameig }}</a></p>
+                                @else
+                                  <p class="m-0"> - </p>
+                                @endif
                               </div>
                             </div>
-                            <div class="d-flex flex-row">
+                            <div class="d-flex flex-row mt-2">
                               <div>
                                 <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-envelope"></i> </div>
                               </div>
                               <div>
-                                <h5 class="mb-1">E-mail</h5>
-                                <p class="mb-0"><a href="mailto:{{ $branch->email }}" class="link-body">{{ $branch->email }}</a></p>
+                                <h5 class="mb-n1">E-mail</h5>
+                                @if($branch->email != null)
+                                  <p class="m-0"><a href="mailto:{{ $branch->email }}" class="link-body">{{ $branch->email }}</a></p>
+                                @else
+                                  <p class="m-0"> - </p>
+                                @endif
                               </div>
                             </div>
                             <p class="mt-4"><b>Jam Buka:</b></p>
                             <ul class="mt-n4">
-                              <li>{{ $branch->open_at }}</li>
+                              <li>{{ $branch->open_at }} @if($branch->closed_at != null) - {{ $branch->closed_at }}@endif</li>
                             </ul>
                           </div>
                         </div>
+
                       </div>
                     </div>
                   </div>
@@ -127,6 +149,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.48743205145!2d106.89529807373991!3d-6.199241660727816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4b986aa9d99%3A0x81e1a8753bc418cc!2sYayasan%20Kharisma!5e0!3m2!1sen!2sid!4v1695469799552!5m2!1sen!2sid" style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
               </div>
             </div>
+
             <div class="col-lg-6">
               <div class="p-6">
                 <address>{{ $institution->addr }}, {{ $institution->sub_district }}, {{ $institution->district }}, {{ $institution->city }}, {{ $institution->province }}, {{ $institution->zip_code }}</address>
@@ -135,34 +158,61 @@
                     <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
                   </div>
                   <div>
-                    <h5 class="mb-1">Phone</h5>
-                    <p>{{ $institution->phone1 }} / {{ $institution->phone2 }}</p>
+                    <h5 class="mb-n1">Phone</h5>
+                    <p class="m-0">
+                      @if($institution->phone1 != null && $institution->phone2 != null)
+                        {{ $institution->phone1 }} / {{ $institution->phone2 }}
+                      @elseif($institution->phone1 != null)
+                        {{ $institution->phone1 }}
+                      @elseif($institution->phone2 != null)
+                        {{ $institution->phone2 }}
+                      @endif
+                    </p>
+                    
+                    @if($institution->whatsapp != null)
+                      <p class="m-0">{{ $institution->whatsapp }}(whatsapp)</p>
+                    @endif
                   </div>
                 </div>
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row mt-2">
                   <div>
                     <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-instagram"></i> </div>
                   </div>
                   <div>
-                    <h5 class="mb-1">Instagram</h5>
-                    <p class="mb-0"><a href="{{ $institution->instagram }}" class="link-body">{{ $institution->instagram }}</a></p>
+                    <?php 
+                      $find = 'https://www.instagram.com/';
+                      $replaceWith = '@';
+
+                      $usernameig = str_replace($find, $replaceWith, $institution->instagram);
+                    ?>
+                    <h5 class="mb-n1">Instagram</h5>
+                    @if($institution->instagram != null)
+                      <p class="m-0"><a href="{{ $institution->instagram }}" class="link-body">{{ $usernameig }}</a></p>
+                    @else
+                      <p class="m-0"> - </p>
+                    @endif
                   </div>
                 </div>
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row mt-2">
                   <div>
                     <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-envelope"></i> </div>
                   </div>
                   <div>
-                    <h5 class="mb-1">E-mail</h5>
-                    <p class="mb-0"><a href="{{ $institution->email }}" class="link-body">{{ $institution->email }}</a></p>
+                    <h5 class="mb-n1">E-mail</h5>
+                    @if($institution->email != null)
+                      <p class="m-0"><a href="mailto:{{ $institution->email }}" class="link-body">{{ $institution->email }}</a></p>
+                    @else
+                      <p class="m-0"> - </p>
+                    @endif
                   </div>
                 </div>
                 <p class="mt-4"><b>Jam Buka:</b></p>
                 <ul class="mt-n4">
-                  <li>{{ $institution->open_at }}</li>
+                  <li>{{ $institution->open_at }} @if($institution->closed_at != null) - {{ $institution->closed_at }}@endif</li>
                 </ul>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
