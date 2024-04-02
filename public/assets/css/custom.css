@@ -118,21 +118,24 @@
 
 .bg-homepage-1 {
     position: relative;
-    background: url("/assets/img/homepage/bg1.png") no-repeat center center;
+    background: var(--bg-homepage-1-url) no-repeat center center;
+    /* background: url("/assets/img/homepage/bg1.png") no-repeat center center; */
     background-size: cover;
     padding-bottom: 8rem;
     overflow: hidden;
 }
 .bg-homepage-2 {
     position: relative;
-    background: url("/assets/img/homepage/bg2.png") no-repeat center center;
+    background: var(--bg-homepage-2-url) no-repeat center center;
+    /* background: url("/assets/img/homepage/bg2.png") no-repeat center center; */
     background-size: cover;
     padding-bottom: 8rem;
     overflow: hidden;
 }
 .bg-homepage-3 {
     position: relative;
-    background: url("/assets/img/homepage/bg3.png") no-repeat center center;
+    background: var(--bg-homepage-3-url) no-repeat center center;
+    /* background: url("/assets/img/homepage/bg3.png") no-repeat center center; */
     background-size: cover;
     padding-bottom: 8rem;
     overflow: hidden;
@@ -504,4 +507,26 @@
     padding-bottom: 20px;
     border-bottom: 1px solid #e3eaef;
     margin-bottom: 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.navbar-brand a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+img.logo-navbars {
+    max-height: 100%;
+    width: auto;
+}
+
+.icon-sidebar {
+    max-width: 20vw;
 }

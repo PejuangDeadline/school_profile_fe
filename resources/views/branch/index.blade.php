@@ -35,11 +35,11 @@
 <section class="wrapper bg-transparent">
   <div class="bg-branch px-3">
     @if($branch->grade === "Daycare")
-      <img src="{{ asset('assets/img/branch/header-daycare.png') }}" alt="">
+      <img src="{{ asset('assets/img/branch/2024/April/header-daycare.png') }}" alt="">
     @elseif($branch->grade === "KB-TK")
-      <img src="{{ asset('assets/img/branch/header-kb-tk.png') }}" alt="">
+      <img src="{{ asset('assets/img/branch/2024/April/header-kb-tk.png') }}" alt="">
     @elseif($branch->grade === "SD")
-      <img src="{{ asset('assets/img/branch/header-sd.png') }}" alt="">
+      <img src="{{ asset('assets/img/branch/2024/April/header-sd.png') }}" alt="">
     @else 
       <img src="{{ asset('assets/img/branch/header-blank.png') }}" alt="">
     @endif
@@ -303,11 +303,23 @@
                     <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
                   </div>
                   <div>
-                    <h5 class="mb-1">Phone</h5>
-                    <p>{{ $branch->phone1 }} / {{ $branch->phone2 }}</p>
+                    <h5 class="mb-n1">Phone</h5>
+                    <p class="m-0">
+                      @if($branch->phone1 != null && $branch->phone2 != null)
+                        {{ $branch->phone1 }} / {{ $branch->phone2 }}
+                      @elseif($branch->phone1 != null)
+                        {{ $branch->phone1 }}
+                      @elseif($branch->phone2 != null)
+                        {{ $branch->phone2 }}
+                      @endif
+                    </p>
+                    
+                    @if($branch->whatsapp != null)
+                      <p class="m-0">{{ $branch->whatsapp }}(whatsapp)</p>
+                    @endif
                   </div>
                 </div>
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row mt-2">
                   <div>
                     <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-instagram"></i> </div>
                   </div>
@@ -318,22 +330,30 @@
 
                       $usernameig = str_replace($find, $replaceWith, $branch->instagram);
                     ?>
-                    <h5 class="mb-1">Instagram</h5>
-                    <p class="mb-0"><a href="{{ $branch->instagram }}" class="link-body">{{ $usernameig }}</a></p>
+                    <h5 class="mb-n1">Instagram</h5>
+                    @if($branch->instagram != null)
+                      <p class="m-0"><a href="{{ $branch->instagram }}" class="link-body">{{ $usernameig }}</a></p>
+                    @else
+                      <p class="m-0"> - </p>
+                    @endif
                   </div>
                 </div>
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row mt-2">
                   <div>
                     <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-envelope"></i> </div>
                   </div>
                   <div>
-                    <h5 class="mb-1">E-mail</h5>
-                    <p class="mb-0"><a href="mailto:{{ $branch->email }}" class="link-body">{{ $branch->email }}</a></p>
+                    <h5 class="mb-n1">E-mail</h5>
+                    @if($branch->email != null)
+                      <p class="m-0"><a href="mailto:{{ $branch->email }}" class="link-body">{{ $branch->email }}</a></p>
+                    @else
+                      <p class="m-0"> - </p>
+                    @endif
                   </div>
                 </div>
                 <p class="mt-4"><b>Jam Buka:</b></p>
                 <ul class="mt-n4">
-                  <li>{{ $branch->open_at }}</li>
+                  <li>{{ $branch->open_at }} @if($branch->closed_at != null) - {{ $branch->closed_at }}@endif</li>
                 </ul>
               </div>
             </div>

@@ -13,11 +13,11 @@
       <div class="col-lg-4 ms-auto position-relative">
         <div class="row g-4">
           <div class="col-6" data-cues="fadeIn" data-group="col-middle">
-            <div><img class="w-100 img-fluid rounded shadow-lg" src="{{ asset('assets/img/homepage/hp1.png') }}" alt=""></div>
-            <div><img class="w-100 img-fluid rounded shadow-lg mt-4" src="{{ asset('assets/img/homepage/hp2.png') }}" alt=""></div>
+            <div><img class="w-100 img-fluid rounded shadow-lg" src="{{ asset('assets/img/homepage/2024/April/hp1.png') }}" alt=""></div>
+            <div><img class="w-100 img-fluid rounded shadow-lg mt-4" src="{{ asset('assets/img/homepage/2024/April/hp2.png') }}" alt=""></div>
           </div>
           <div class="col-6 d-flex flex-column" data-cues="fadeIn" data-group="col-end" data-delay="900">
-            <div class="mt-8"><img class="img-fluid rounded shadow-lg" src="{{ asset('assets/img/homepage/hp3.png') }}" alt=""></div>
+            <div class="mt-8"><img class="img-fluid rounded shadow-lg" src="{{ asset('assets/img/homepage/2024/April/hp3.png') }}" alt=""></div>
           </div>
         </div>
       </div>
