@@ -34,21 +34,12 @@
 	</style>
 <section class="wrapper bg-transparent">
   <div class="bg-branch px-3">
-    {{-- @if($branch->grade === "Daycare")
-      <img src="{{ asset('assets/img/branch/2024/April/header-daycare.png') }}" alt="">
-    @elseif($branch->grade === "KB-TK")
-      <img src="{{ asset('assets/img/branch/2024/April/header-kb-tk.png') }}" alt="">
-    @elseif($branch->grade === "SD")
-      <img src="{{ asset('assets/img/branch/2024/April/header-sd.png') }}" alt="">
-    @else 
-      <img src="{{ asset('assets/img/branch/header-blank.png') }}" alt="">
-    @endif --}}
     @if($branch->grade === "Daycare")
-      <img src="{{ asset('assets/img/branch/header-daycare_1.png') }}" alt="">
+      <img src="{{ asset('assets/img/branch/header-daycare.png') }}" alt="">
     @elseif($branch->grade === "KB-TK")
-      <img src="{{ asset('assets/img/branch/header-kb-tk_1.png') }}" alt="">
+      <img src="{{ asset('assets/img/branch/header-kb-tk.png') }}" alt="">
     @elseif($branch->grade === "SD")
-      <img src="{{ asset('assets/img/branch/header-sd_1.png') }}" alt="">
+      <img src="{{ asset('assets/img/branch/header-sd.png') }}" alt="">
     @else 
       <img src="{{ asset('assets/img/branch/header-blank.png') }}" alt="">
     @endif
